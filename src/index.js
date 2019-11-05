@@ -2,19 +2,31 @@ function changeTitle() {
   document.getElementById("headerOne").innerHTML = "Cipher";
 }
 
-function myFunction() {
+const buttonCipher = document.getElementById("Cipher");
+const buttonDecipher = document.getElementById("Decipher");
+const buttonCopy = document.getElementById("copyText");
+const buttonClear = document.getElementById("clearText");
+const iconMoreInfo = document.getElementById("moreInfo");
+
+buttonCipher.addEventListener("click", functionCipher);
+buttonDecipher.addEventListener("click", functionDecipher);
+buttonCopy.addEventListener("click", copy);
+buttonClear.addEventListener("click", clear);
+iconMoreInfo.addEventListener("click", showMoreInfo);
+
+function functionCipher() {
   let value = document.getElementById("textAreaOne").value;
 
   let valueUpperCase = value.toUpperCase();
 
   let shiftingValue = parseInt(document.getElementById("shiftRegulator").value);
-
+  //if (shiftingValue == " ")
   let result = window.cipher.encode(shiftingValue, valueUpperCase);
 
   document.getElementById("textAreaTwo").value = result;
 }
 
-function secondFunction() {
+function functionDecipher() {
   let value = document.getElementById("textAreaTwo").value;
 
   let valueUpperCase = value.toUpperCase();
@@ -26,7 +38,7 @@ function secondFunction() {
   document.getElementById("textAreaTwo").value = result;
 }
 
-function eraseTextAreaOne() {
+function clear() {
   document.getElementById("textAreaOne").value = "";
   document.getElementById("textAreaTwo").value = "";
 }
