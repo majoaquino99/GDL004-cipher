@@ -5,11 +5,7 @@ function changeTitle() {
 function myFunction() {
   let value = document.getElementById("textAreaOne").value;
 
-  //document.getElementById("textAreaTwo").value=value;//
-
   let valueUpperCase = value.toUpperCase();
-
-  //document.getElementById("textAreaTwo").value = valueUpperCase;
 
   let shiftingValue = parseInt(document.getElementById("shiftRegulator").value);
 
@@ -21,11 +17,7 @@ function myFunction() {
 function secondFunction() {
   let value = document.getElementById("textAreaTwo").value;
 
-  //document.getElementById("textAreaTwo").value=value;//
-
   let valueUpperCase = value.toUpperCase();
-
-  //document.getElementById("textAreaTwo").value = valueUpperCase;
 
   let shiftingValue = parseInt(document.getElementById("shiftRegulator").value);
 
