@@ -11,10 +11,10 @@ window.cipher = {
 
       let newCharacters = String.fromCharCode(characters);
 
-      if (chASCII == 32) {
-        result += " ";
-      } else {
+      if (chASCII >= 65 && chASCII <= 90) {
         result += newCharacters;
+      } else {
+        result += String.fromCharCode(chASCII);
       }
     }
 
@@ -32,10 +32,10 @@ window.cipher = {
 
       let newCharacters = String.fromCharCode(characters);
 
-      if (chASCII == 32) {
-        secondResult += " ";
-      } else {
+      if (chASCII >= 65 && chASCII <= 90) {
         secondResult += newCharacters;
+      } else {
+        secondResult += String.fromCharCode(chASCII);
       }
     }
 

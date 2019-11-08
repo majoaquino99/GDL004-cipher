@@ -1,297 +1,157 @@
-# Cifrado César
+# Caesar Cipher
 
-## Índice
+## Índex
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker Edition](#6-hacker-edition)
-* [7. Pistas, tips y lecturas complementarias](#6-pistas-tips-y-lecturas-complementarias)
+- [1. Objective](#1-objective)
+- [2. Project Summary](#2-project-summary)
+- [3. Learnt Skills](#3-learnt-skills)
+- [4. Prototypes](#4-prototypes)
+- [5. Project Functions](#5-proyect-functions)
+- [6. Feedback & Testing](#6-feedback-&-testing)
 
-***
+---
 
-## 1. Preámbulo
+## 1. Objective
 
-Cifrar significa codificar. El [cifrado César](https://en.wikipedia.org/wiki/Caesar_cipher)
-es uno de los primeros métodos de cifrado conocidos. El emperador romano Julio
-César lo usaba para enviar órdenes secretas a sus generales en los campos de
-batalla.
+There is war in the air. The Jewish Forces have allied to develop a way
+to send their officers back home their positions and future moves.
+However, there was no luck, because their code was just too easy to
+crack. They found another way. And you will help with that. You are responsible to send a message
+secure enough to prevent the enemy to figure it out.
+
+### History
+
+        In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
 
 ![caeser-cipher](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Caesar3.svg/2000px-Caesar3.svg.png)
 
-El cifrado césar es una de las técnicas más simples para cifrar un mensaje. Es
-un tipo de cifrado por sustitución, es decir que cada letra del texto original
-es reemplazada por otra que se encuentra un número fijo de posiciones
-(desplazamiento) más adelante en el mismo alfabeto.
+The transformation can be represented by aligning two alphabets; the cipher alphabet is the plain alphabet rotated left or right by some number of positions. For instance, here is a Caesar cipher using a left rotation of three places, equivalent to a right shift of 23 (the shift parameter is used as the key):
 
-Por ejemplo, si usamos un desplazamiento (_offset_) de 3 posiciones:
+Plain: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Cipher: XYZABCDEFGHIJKLMNOPQRSTUVW
 
-* La letra A se cifra como D.
-* La palabra CASA se cifra como FDVD.
-* Alfabeto sin cifrar: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-* Alfabeto cifrado: D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+When encrypting, a person looks up each letter of the message in the "plain" line and writes down the corresponding letter in the "cipher" line.
 
-En la actualidad, todos los cifrados de sustitución simple se descifran con
-mucha facilidad y, aunque en la práctica no ofrecen mucha seguridad en la
-comunicación por sí mismos; el cifrado César sí puede formar parte de sistemas
-más complejos de codificación, como el cifrado Vigenère, e incluso tiene
-aplicación en el sistema ROT13.
+Plaintext: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+Ciphertext: QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD
 
-## 2. Resumen del proyecto
+## 2. Project Summary
 
-¿Qué tengo que hacer exactamente? En este proyecto crearás la primera aplicación
-web del _bootcamp_. Servirá para que el usuario pueda cifrar y descifrar un
-texto indicando un desplazamiento específico de caracteres (_offset_).
+Our goal for this project was to create a platform where the user could enter a text and cipher it,
+choosing a level of security: a specific character offset.
 
-La temática es libre. Tú debes pensar en qué situaciones de la vida real se
-necesitaría cifrar un mensaje y pensar en cómo debe ser esa experiencia de uso
-(qué pantallas, explicaciones, mensajes, colores, ¿marca?) etc. Algunas ideas de
-ejemplo:
+My chosen thematic was a war coding platform. Internal letters would be sent around a conflict zone, and the enemy
+wouldn't be able to decipher it without using this mechanism.
 
-* Crear claves seguras para el email.
-* Encriptar/cifrar una tarjeta de crédito.
-* Herramienta de mensajería interna de una organización de derechos humanos en
-  una zona de conflicto.
-* Mensajería secreta para parejas.
+## 3. Learnt Skills
 
-## 3. Objetivos de aprendizaje
+I had to acquire experience in the following tools to be able to create this platform:
+-HTML5
+-CCS3 and
+-JavaScript
 
-El objetivo principal de aprendizaje es adquirir experiencia desarrollando
-aplicaciones web (WebApp) que interactúen con el usuario a través del navegador
-y la lógica, utilizando HTML5, CCS3 y JavaScript como herramientas.
-
-Reflexiona y luego marca los objetivos que has llegado a **entender** y **aplicar** en tu proyecto.
+Objectives I got to **understand** y **apply** for my project:
 
 ### UX
 
-- [ ] Diseñar la aplicación pensando y entendiendo al usuario.
-- [ ] Crear prototipos para obtener feedback e iterar.
+- [x] Diseñar la aplicación pensando y entendiendo al usuario.
+- [x] Crear prototipos para obtener feedback e iterar.
 - [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
 
 ### HTML y CSS
 
-- [ ] Uso de HTML semántico.
-- [ ] Uso de selectores de CSS.
-- [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
+- [x] Uso de HTML semántico.
+- [x] Uso de selectores de CSS.
+- [x] Construir tu aplicación respetando el diseño realizado (maquetación).
 
 ### DOM
 
 - [ ] Uso de selectores del DOM.
-- [ ] Manejo de eventos del DOM.
-- [ ] Manipulación dinámica del DOM.
+- [x] Manejo de eventos del DOM.
+- [x] Manipulación dinámica del DOM.
 
 ### Javascript
 
-- [ ] Manipulación de strings.
-- [ ] Uso de condicionales (if-else | switch).
-- [ ] Uso de bucles.
-- [ ] Uso de funciones (parámetros | argumentos | valor de retorno).
-- [ ] Declaración de variables (const & let).
+- [x] Manipulación de strings.
+- [x] Uso de condicionales (if-else | switch).
+- [x] Uso de bucles.
+- [x] Uso de funciones (parámetros | argumentos | valor de retorno).
+- [x] Declaración de variables (const & let).
 
 ### Testing
-- [ ] Testeo de tus funciones.
+
+- [x] Testeo de tus funciones.
 
 ### Git y GitHub
-- [ ] Comandos de git (add | commit | pull | status | push).
-- [ ] Manejo de repositorios de GitHub (clone | fork | gh-pages).
+
+- [x] Comandos de git (add | commit | pull | status | push).
+- [x] Manejo de repositorios de GitHub (clone | fork | gh-pages).
 
 ### ESLint y Sintaxis
+
 - [ ] Uso de identificadores descriptivos (Nomenclatura | Semántica).
 - [ ] Uso de linter (ESLint).
 
+## 4. Prototypes
 
-## 4. Consideraciones generales
+Sketched prototype
+![Sketched Ṕrototype](./prototipo-lapiz.papel.jpeg)
+Graphic prototype using Figma.
 
-* Este proyecto se debe resolver de manera individual.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando GitHub pages. Si no sabes lo que es GitHub, no
-  te preocupes, lo aprenderás durante este proyecto.
-* Tendremos dos sprints para este proyecto.
+<iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F6RCIOvTKPFyibHkIuP4k1I%2FPrototyping-in-Figma%3Fnode-id%3D6%253A394" allowfullscreen></iframe>
 
-## 5. Criterios de aceptación mínimos del proyecto
+## 5. Project Functions
 
-Usa este alfabeto simple (solamente mayúsculas y sin ñ).
+The user will be able to:
 
-* A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+- Chose an offset of how many positions we want our text to be displaced.
+- Insert message the user wishes to cipher.
+- See ciphered message in the second text-box.
+- Copy ciphered text.
+- Clear both text-boxes to add a new message.
+- Add ciphered message in the second text-box to decipher.
+- See deciphered message in the first text-box.
+- Read more about ciphering in Wikipedia by clicking the icon on footer.
 
-La interfaz debe permitir al usuario:
+## 6. Feedback & Testing
 
-* Elegir un desplazamiento (_offset_) indicando cuántas posiciones queremos que
-  el cifrado desplace cada caracter.
-* Insertar un mensaje (texto) que queremos cifrar.
-* Ver el resultado del mensaje cifrado.
-* Insertar un mensaje (texto) a descifrar.
-* Ver el resultado del mensaje descifrado.
+### Feedback Received
 
-### Scripts / Archivos
+After I felt that my platform was concluded, I asked my teammates to give me specific feedback of my platform. Here are some of the things I agreed were important changes I had to make to my page.
 
-#### UX (Diseño de experiencia de usuario)
+- [x] erase alert of security level once you do add a security level.
+- [] move instruction #7 to a comment when you click decipher.
+- [x] change button arrangement and color.
+- [] display(create invisible divisions to substitute scrolling)
+- [] make a more dynamic platform.
 
-Antes de iniciar a codear, debes entender el problema que quieres solucionar y
-cómo tu aplicación lo soluciona.
+### Testing
 
-* Trabaja tu primer prototipo con papel y lápiz (blanco y negro).
-* Luego valida esta solución con una compañera (pedir feedback).
-* Toma lo aprendido al momento de validar tu primer prototipo y desarrolla un
-  nuevo prototipo usando alguna herramienta para diseño de prototipos
-  ([Balsamiq](https://balsamiq.com/), [Figma](https://www.figma.com/),
-  [Google Slides](https://www.google.com/intl/es/slides/about/), etc.)
-Estos puntos los presentarás en el `README.md`.
+Scanned 1 files, no errors found (26 ms).
 
-**`README.md`**:
+> cipher@1.0.0 test /home/laboratoria-175/proyectos/GDL004-cipher
+> jest --verbose --coverage
 
-Debe contener lo siguiente:
+PASS test/cipher.spec.js
+cipher
+✓ debería ser un object (3ms)
+cipher.encode
+✓ debería ser una función (1ms)
+✓ debería retornar "HIJKLMNOPQRSTUVWXYZABCDEFG" para "ABCDEFGHIJKLMNOPQRSTUVWXYZ" con offset 33 (1ms)
+✓ debería retornar " !@" para " !@"
+cipher.decode
+✓ debería ser una función
+✓ debería retornar "ABCDEFGHIJKLMNOPQRSTUVWXYZ" para "HIJKLMNOPQRSTUVWXYZABCDEFG" con offset 33
+✓ debería retornar " !@" para " !@" (1ms)
 
-* Un título con el nombre de tu proyecto.
-* Un resumen de 1 o 2 líneas de qué se trata tu proyecto.
-* La imagen final de tu proyecto.
-* Investigación UX:
-  1. Explicar quiénes son los usuarios y los objetivos en relación con el
-    producto.
-  2. Explicar cómo el producto soluciona los problemas/necesidades de dichos
-    usuarios.
-  3. Luego colocarás la foto de tu primer prototipo en papel.
-  4. Agregar un resumen del feedback recibido indicando las mejoras a realizar.
-  5. Imagen del prototipo final.
-
-#### Visualmente (HTML5 y CSS3)
-
-Deberás maquetar el prototipo final que diseñaste
-utilizando HTML5 y CSS3. En este momento elegirás los colores, tipo de fuente,
-etc a usar.
-
-A continuación describimos los archivos que utilizarás:
-
-**`src/index.html`**:
-
-En este archivo va el contenido que se mostrará al usuario (esqueleto HTML).
-Encontrarás 3 etiquetas iniciales, las cuales si deseas puedes borrar y empezar
-de cero:
-
-* `<header>`: encabezado de tu proyecto.
-* `<main>`: contenido principal de tu proyecto.
-* `<footer>`: pie de página de tu proyecto.
-
-Recuerda utilizar [etiquetas semánticas](https://t1.daumcdn.net/cfile/tistory/22690B335887451A3B) y mantener una estructura clara en tu HTML.
-
-**`src/style.css`**:
-
-Este archivo debe contener las reglas de estilo. Queremos que escribas tus
-propias reglas, por eso NO está permitido el uso de frameworks de CSS3.
-
-#### Funcionalmente (JavaScript - pruebas unitarias)
-
-* La lógica del proyecto debe estar implementada completamente en JavaScript.
-* En este proyecto NO está permitido usar librerías o frameworks, sólo
-[vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e).
-* No se debe utilizar la _pseudo-variable_ `this`.
-
-Vas a tener 2 archivos JavaScript separando responsabilidades, a continuación
-indicamos qué harás en cada archivo:
-
-**`src/cipher.js`**:
-
-Acá escribirás las 2 funciones necesarias para el usuario pueda cifrar o descifrar.
-Para esto debes implementar el **objeto `cipher`**, el cual ya se encuentra _exportado_ en el
-objeto global (`window`). Este objeto (`cipher`) contiene dos métodos:
-
-  - **`cipher.encode(offset, string)`**: `offset` es el número de posiciones que queremos
-  mover a la derecha en el alfabeto y `string` el mensaje (texto) que queremos cifrar.
-  - **`cipher.decode(offset, string)`**: `offset` es el número de posiciones que queremos
-  mover a la izquierda en el alfabeto y `string` el mensaje (texto) que queremos descifrar.
-
-**`src/index.js`**:
-
-Acá escribirás todo el código que tenga que ver con la interacción del DOM (seleccionar,
-actualizar y manipular elementos del DOM y eventos).
-Es decir, en este archivo deberás invocar a `cipher.encode(offset, string)` y
-`cipher.decode(offset, string)` según sea necesario para actualizar el resultado en la
-pantalla (UI).
-
-**`test/cipher.spec.js`**:
-
-En este archivo tendrás que completar las pruebas unitarias de las funciones
-`cipher.encode(offset, string)` y `cipher.decode(offset, string)` implementadas en `cipher.js`
-utilizando Jest.
-Tus pruebas unitarias deben dar un 70% en _coverage_ (cobertura), _statements_ (sentencias),
-_functions_ (funciones) y _lines_ (líneas); y un mínimo del 50% de _branches_ (ramas).
-
-## 6. Hacker edition
-
-Las secciones llamadas Hacker Edition son opcionales. Si terminaste con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
-
-La descripción general de este proyecto no menciona qué pasaría con las letras minúsculas y otros caracteres (como espacios, puntuación, ñ, ...). El boilerplate incluye algunos tests (comentados en principio) que puedes usar como punto de partida para implementar el soporte para estos casos.
-
-Tampoco se menciona qué pasaría si el offset fuera negativo. Como parte del hacker edition te invitamos a explorar también esta caso por tu cuenta.
-
-## 7. Pistas, tips y lecturas complementarias
-
-### Primeros pasos
-
-1. Antes que nada, asegúrate de tener un :pencil: editor de texto en
-  condiciones, algo como [Atom](https://atom.io/) o
-  [Code](https://code.visualstudio.com/).
-2. Para ejecutar los comandos a continuación necesitarás una :shell:
-  [UNIX Shell](https://lms.laboratoria.la/cohorts/lim-2019-09-bc-core-lim011/courses/shell),
-  que es un programita que interpreta líneas de comando (command-line
-  interpreter) así como tener [git](https://lms.laboratoria.la/cohorts/lim-2019-09-bc-core-lim011/courses/scm/01-git/01-git)
-  instalado. Si usas un sistema operativo "UNIX-like", como GNU/Linux o MacOS,
-  ya tienes una _shell_ (terminal) instalada por defecto (y probablemente `git`
-  también). Si usas Windows puedes usar [Git bash](https://git-scm.com/download/win).
-  3. Haz tu propio :fork_and_knife: [fork](https://help.github.com/articles/fork-a-repo/)
-  del repo de tu cohort, tus _coaches_ te compartirán un _link_ a un repo y te
-  darán acceso de lectura en ese repo.
-4. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
-  tu _fork_ a tu computadora (copia local).
-5. 📦 Instala las dependencias del proyecto con el comando `npm
-  install`. Esto asume que has instalado [Node.js](https://nodejs.org/) (que
-  incluye [npm](https://docs.npmjs.com/)).
-6. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
-  pruebas unitarias (unit tests) con el comando `npm test`.
-7. Para ver la interfaz de tu programa en el navegador, usa el comando
-  `npm start` para arrancar el servidor web y dirígete a
-  `http://localhost:5000` en tu navegador.
-8. A codear se ha dicho! :rocket:
-
-### Recursos y temas relacionados
-
-A continuación un video de Michelle que te lleva a través de la fórmula
-matemática del Cifrado César y un par de cosas más que debes saber para
-resolver este proyecto. ¡Escúchala con detenimiento y sigue sus consejos! :)
-
-[![tips caesar cipher](https://img.youtube.com/vi/zd8eVrXhs7Y/0.jpg)](https://www.youtube.com/watch?v=zd8eVrXhs7Y)
-
-[https://www.youtube.com/watch?v=f0zL6Ot9y_w](https://www.youtube.com/watch?v=f0zL6Ot9y_w)
-
-Diseño de experiencia de usuario (User Experience Design):
-
-* Ideación
-* Prototipado (sketching)
-* Testeo e Iteración
-
-Desarrollo Front-end:
-
-* Valores
-* Tipos
-* Variables
-* Control de flujo
-* Tests unitarios
-* [Aprende más sobre Accesibilidad y Semántica](https://www.w3.org/WAI/roles/developers/)
-* [Aprende más sobre `charCodeAt()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charCodeAt)
-* [Aprende más sobre `String.fromCharCode()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/fromCharCode)
-* [Aprende más sobre `ASCII`](http://conceptodefinicion.de/ascii/)
-* [Documentación de NPM](https://docs.npmjs.com/)
-
-Herramientas:
-
-* GitHub y GitHub Pages.
-
-Organización del Trabajo:
-
-* [Metodologías Ágiles](https://www.youtube.com/watch?v=v3fLx7VHxGM)
-* [Scrum en menos de 2 minutos](https://www.youtube.com/watch?v=TRcReyRYIMg)
-* [Scrum en Detalle](https://www.youtube.com/watch?v=nOlwF3HRrAY&t=297s).
-
-No esperamos que hagas todo eso desde este proyecto. Iremos profundizando poco a poco a lo largo del -_bootcamp_.
+-----------|----------|----------|----------|----------|-------------------|
+File | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+-----------|----------|----------|----------|----------|-------------------|
+All files | 100 | 100 | 100 | 100 | |
+cipher.js | 100 | 100 | 100 | 100 | |
+-----------|----------|----------|----------|----------|-------------------|
+Test Suites: 1 passed, 1 total
+Tests: 7 passed, 7 total
+Snapshots: 0 total
+Time: 1.436s
+Ran all test suites.
